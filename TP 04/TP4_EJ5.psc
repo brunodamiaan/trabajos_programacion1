@@ -6,9 +6,9 @@ Algoritmo TP4_EJ5 // ¡¡¡Deshabilitar la funcion para utilizar indices en arreglo
 	Definir x,n,jugador Como Entero
 	Definir vector como caracter
 	
-	Dimension vector[9]
+	Dimension vector[9] // No se recomienda cambiar el valor ya que 9 es la cantidad máxima de jugadas posible.
 	para x = 1 hasta 9 Con Paso 1 Hacer
-		vector(x) = " "
+		vector[x] = " "
 	FinPara
 	
 	x = 1 // Contador de jugadas
@@ -21,50 +21,50 @@ Algoritmo TP4_EJ5 // ¡¡¡Deshabilitar la funcion para utilizar indices en arreglo
 		
 		// Dibijado del tablero y los números  de cada posición
 		Escribir "Ingresa una posicion jugador: ",jugador
-		Escribir "1,2,3","    ",vector(1),",",vector(2),",",vector(3)
-		Escribir "4,5,6","    ",vector(4),",",vector(5),",",vector(6)
-		Escribir "7,8,9","    ",vector(7),",",vector(8),",",vector(9)
+		Escribir "1,2,3","    ",vector[1],",",vector[2],",",vector[3]
+		Escribir "4,5,6","    ",vector[4],",",vector[5],",",vector[6]
+		Escribir "7,8,9","    ",vector[7],",",vector[8],",",vector[9]
 		leer n
 		
 		si n > 0 y n < 10 Entonces // Para que no se ingrese una opción incorrecta.
 			
 			si jugador mod 2 == 1 Entonces // Turno Jugador 1
 				
-				si vector(n) == " " Entonces //Si la casilla está vacía
-					vector(n) = "X" // Elección del Jugador 1
+				si vector[n] == " " Entonces //Si la casilla está vacía
+					vector[n] = "X" // Elección del Jugador 1
 					
 					jugador = 2 // Cambio de Jugador
 					
 					// Condiciones para que Jugador 1 la partida:
-					si vector(1) == "X" y vector(2) == "X" y vector(3) == "X" Entonces
+					si vector[1] == "X" y vector[2] == "X" y vector[3] == "X" Entonces
 						Escribir "EL jugador 1 ha ganado"
 						x = 9
 					FinSi
-					si vector(4) == "X" y vector(5) == "X" y vector(6) == "X" Entonces
+					si vector[4] == "X" y vector[5] == "X" y vector[6] == "X" Entonces
 						Escribir "EL jugador 1 ha ganado"
 						x = 9
 					FinSi
-					si vector(7) == "X" y vector(8) == "X" y vector(9) == "X" Entonces
+					si vector[7] == "X" y vector[8] == "X" y vector[9] == "X" Entonces
 						Escribir "EL jugador 1 ha ganado"
 						x = 9
 					FinSi
-					si vector(1) == "X" y vector(4) == "X" y vector(7) == "X" Entonces
+					si vector[1] == "X" y vector[4] == "X" y vector[7] == "X" Entonces
 						Escribir "EL jugador 1 ha ganado"
 						x = 9
 					FinSi
-					si vector(2) == "X" y vector(5) == "X" y vector(8) == "X" Entonces
+					si vector[2] == "X" y vector[5] == "X" y vector[8] == "X" Entonces
 						Escribir "EL jugador 1 ha ganado"
 						x = 9
 					FinSi
-					si vector(2) == "X" y vector(6) == "X" y vector(9) == "X" Entonces
+					si vector[2] == "X" y vector[6] == "X" y vector[9] == "X" Entonces
 						Escribir "EL jugador 1 ha ganado"
 						x = 9
 					FinSi
-					si vector(1) == "X" y vector(5) == "X" y vector(9) == "X" Entonces
+					si vector[1] == "X" y vector[5] == "X" y vector[9] == "X" Entonces
 						Escribir "EL jugador 1 ha ganado"
 						x = 9
 					FinSi
-					si vector(3) == "X" y vector(5) == "X" y vector(7) == "X" Entonces
+					si vector[3] == "X" y vector[5] == "X" y vector[7] == "X" Entonces
 						Escribir "EL jugador 1 ha ganado"
 						x = 9
 					FinSi
@@ -76,42 +76,42 @@ Algoritmo TP4_EJ5 // ¡¡¡Deshabilitar la funcion para utilizar indices en arreglo
 				
 			// Turno Jugador 2
 			SiNo
-				si vector(n) == " " Entonces // Si la casilla está vacía
+				si vector[n] == " " Entonces // Si la casilla está vacía
 					
-					vector(n) = "O" // E	lección del Jugador 2
+					vector[n] = "O" // E	lección del Jugador 2
 					
 					jugador = 1 // Cambio de jugador
 					
 					// Condiciones para que Jugador 2 gane la partida:
-					si vector(1) == "O" y vector(2) == "O" y vector(3) == "O" Entonces
+					si vector[1] == "O" y vector[2] == "O" y vector[3] == "O" Entonces
 						Escribir "EL jugador 2 ha ganado"
 						x = 9
 					FinSi
-					si vector(4) == "O" y vector(5) == "O" y vector(6) == "O" Entonces
+					si vector[4] == "O" y vector[5] == "O" y vector[6] == "O" Entonces
 						Escribir "EL jugador 2 ha ganado"
 						x = 9
 					FinSi
-					si vector(7) == "O" y vector(8) == "O" y vector(9) == "O" Entonces
+					si vector[7] == "O" y vector[8] == "O" y vector[9] == "O" Entonces
 						Escribir "EL jugador 2 ha ganado"
 						x = 9
 					FinSi
-					si vector(1) == "O" y vector(4) == "O" y vector(7) == "O" Entonces
+					si vector[1] == "O" y vector[4] == "O" y vector[7] == "O" Entonces
 						Escribir "EL jugador 2 ha ganado"
 						x = 9
 					FinSi
-					si vector(2) == "O" y vector(5) == "O" y vector(8) == "O" Entonces
+					si vector[2] == "O" y vector[5] == "O" y vector[8] == "O" Entonces
 						Escribir "EL jugador 2 ha ganado"
 						x = 9
 					FinSi
-					si vector(2) == "O" y vector(6) == "O" y vector(9) == "O" Entonces
+					si vector[2] == "O" y vector[6] == "O" y vector[9] == "O" Entonces
 						Escribir "EL jugador 2 ha ganado"
 						x = 9
 					FinSi
-					si vector(1) == "O" y vector(5) == "O" y vector(9) == "O" Entonces
+					si vector[1] == "O" y vector[5] == "O" y vector[9] == "O" Entonces
 						Escribir "EL jugador 2 ha ganado"
 						x = 9
 					FinSi
-					si vector(3) == "O" y vector(5) == "O" y vector(7) == "O" Entonces
+					si vector[3] == "O" y vector[5] == "O" y vector[7] == "O" Entonces
 						Escribir "EL jugador 2 ha ganado"
 						x = 9
 					FinSi
@@ -132,8 +132,8 @@ Algoritmo TP4_EJ5 // ¡¡¡Deshabilitar la funcion para utilizar indices en arreglo
 	FinMientras
 	
 	// Jugada final
-	Escribir "1,2,3","    ",vector(1),",",vector(2),",",vector(3)
-	Escribir "4,5,6","    ",vector(4),",",vector(5),",",vector(6)
-	Escribir "7,8,9","    ",vector(7),",",vector(8),",",vector(9)
+	Escribir "1,2,3","    ",vector[1],",",vector[2],",",vector[3]
+	Escribir "4,5,6","    ",vector[4],",",vector[5],",",vector[6]
+	Escribir "7,8,9","    ",vector[7],",",vector[8],",",vector[9]
 	
 FinAlgoritmo 
